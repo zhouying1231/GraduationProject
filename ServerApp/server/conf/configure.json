@@ -1,0 +1,12 @@
+{
+  "Project": {
+    "foo": "foo"  
+  },
+  "DB": {
+    "DBIP": "218.244.137.34",
+    "DBPort": 5432,
+    "DBName": "smarthome",
+    "DBUser": "sommily",
+    "DBUserPWD": "19920428" 
+  }
+}
