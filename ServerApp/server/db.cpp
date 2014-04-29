@@ -36,3 +36,4 @@ void DB::InitDBConn()
     if(mConn->is_open())
         std::cout<<"connect successed"<<std::endl;
 }
+

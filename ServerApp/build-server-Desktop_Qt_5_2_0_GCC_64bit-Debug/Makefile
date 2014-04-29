@@ -18,7 +18,7 @@ CXXFLAGS      = -pipe -g -Wall -W -fPIE $(DEFINES)
 INCPATH       = -I/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/linux-g++ -I../server -I.
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/opt/Qt5.2.0/5.2.0-beta1/gcc_64
-LIBS          = $(SUBLIBS) -lpqxx -lpq 
+LIBS          = $(SUBLIBS) -lpqxx -lpq -lboost_system 
 AR            = ar cqs
 RANLIB        = 
 QMAKE         = /opt/Qt5.2.0/5.2.0-beta1/gcc_64/bin/qmake
@@ -46,9 +46,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../server/main.cpp \
-		../server/db.cpp 
+		../server/db.cpp \
+		../server/socketserver.cpp 
 OBJECTS       = main.o \
-		db.o
+		db.o \
+		socketserver.o
 DIST          = /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/common/shell-unix.conf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/common/unix.conf \
@@ -327,11 +329,15 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../server/main.cpp ../server/db.h
+main.o: ../server/main.cpp ../server/db.h \
+		../server/socketserver.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../server/main.cpp
 
 db.o: ../server/db.cpp ../server/db.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o db.o ../server/db.cpp
+
+socketserver.o: ../server/socketserver.cpp ../server/socketserver.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o socketserver.o ../server/socketserver.cpp
 
 ####### Install
 
