@@ -7,23 +7,24 @@
 #include <string>
 #include <unistd.h>
 #include <netdb.h>
-
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
+#include <pqxx/pqxx>
 
 using namespace std;
 
 class Server 
 {
 public:
-	Server();
+    Server(pqxx::connection* conn);
 	~Server();
-     void StartListen();
+    void StartListen();
 private:
     int mServerPort;
     int mListenServerAdd;
+    pqxx::connection*   mConn;
 };
 
 

@@ -2,6 +2,9 @@
 #include <iostream>
 //---------------boost------------------
 #include <boost/asio.hpp>
+#include <boost/shared_ptr.hpp>
+//-------------postgresql-------------
+#include <pqxx/pqxx>
 //--------------Self Library-----------
 #include "db.h"
 #include "socketserver.hpp"
@@ -13,12 +16,10 @@ int main()
     //--------Init and connect DataBase---------
     DB* mDB = new DB();
     mDB->InitDBConn();
+    auto mConn = mDB->GetConn();
     //--------Try to run asio Tcpserver---------
-    Server* mServer = new Server();
+    Server* mServer = new Server(mConn);
     mServer->StartListen();
-
-//    while(1)
-//    {}
     return 0;
 }
 

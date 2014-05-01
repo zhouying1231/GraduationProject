@@ -9,14 +9,11 @@ Client::Client(QObject *parent) :
 void Client::SendMessage()
 {
     char *data="hello qt!";
-//    mClient->connectToHost(QHostAddress("218.244.137.34"), 9876);
-    mClient->connectToHost(QHostAddress("127.0.0.1"), 9876);
+    mClient->connectToHost(QHostAddress("218.244.137.34"), 9876);
+//    mClient->connectToHost(QHostAddress("127.0.0.1"), 9876);
     if(mClient->waitForConnected(3000))
     {
         qDebug()<<"Connected!";
-        mClient->write(data);
-        mClient->write(data);
-        mClient->write(data);
         mClient->write(data);
         mClient->close();
     }

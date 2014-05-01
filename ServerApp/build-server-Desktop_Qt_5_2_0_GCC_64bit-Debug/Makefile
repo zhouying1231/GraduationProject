@@ -14,7 +14,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = 
 CFLAGS        = -pipe -g -Wall -W -fPIE $(DEFINES)
-CXXFLAGS      = -pipe -g -Wall -W -fPIE $(DEFINES)
+CXXFLAGS      = -pipe -g -std=c++0x -Wall -W -fPIE $(DEFINES)
 INCPATH       = -I/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/linux-g++ -I../server -I.
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/opt/Qt5.2.0/5.2.0-beta1/gcc_64
@@ -108,6 +108,7 @@ DIST          = /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/unix/default_pre.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/resolve_config.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/default_post.prf \
+		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/c++11.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/unix/gdb_dwarf_index.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/warn_on.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/wayland-scanner.prf \
@@ -207,6 +208,7 @@ Makefile: ../server/server.pro /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/linux-g++
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/unix/default_pre.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/resolve_config.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/default_post.prf \
+		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/c++11.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/unix/gdb_dwarf_index.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/warn_on.prf \
 		/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/wayland-scanner.prf \
@@ -273,6 +275,7 @@ Makefile: ../server/server.pro /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/linux-g++
 /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/unix/default_pre.prf:
 /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/resolve_config.prf:
 /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/default_post.prf:
+/opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/c++11.prf:
 /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/unix/gdb_dwarf_index.prf:
 /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/warn_on.prf:
 /opt/Qt5.2.0/5.2.0-beta1/gcc_64/mkspecs/features/wayland-scanner.prf:

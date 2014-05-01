@@ -8,5 +8,9 @@
     "DBName": "smarthome",
     "DBUser": "sommily",
     "DBUserPWD": "19920428" 
+  },
+  "Server": {
+    "ListenPort": 9876,
+    "MaxLindNum": 20
   }
 }

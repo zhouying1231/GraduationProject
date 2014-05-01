@@ -15,7 +15,8 @@
 
 using namespace std;
 
-Server::Server()
+Server::Server(pqxx::connection* conn):
+    mConn(conn)
 {
     mServerPort = 9876;
     mListenServerAdd = INADDR_ANY;
@@ -23,7 +24,6 @@ Server::Server()
 
 Server::~Server()
 {
-    printf("Server defined\n");
 }
 
 void Server::StartListen()
@@ -79,7 +79,7 @@ void* start(void* port)
       exit(0);
     }
     else if(n<0)
-      printf("Fork Error:%d\n\a",errno);
+      cout<<"Fork Error"<<errno<<endl;
    close(accept_fd);
   }
   return NULL;

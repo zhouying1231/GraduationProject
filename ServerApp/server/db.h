@@ -8,8 +8,10 @@ class DB
 public:
     DB();
     ~DB();
-    void GetConfInfo();
     void InitDBConn();
+    pqxx::connection* GetConn(){return mConn;}
+private:
+    void GetConfInfo();
 private:
     pqxx::connection* mConn;
     std::string       mDBIP;
